@@ -13,19 +13,23 @@ $form.addEventListener("submit", async (e) => {
 
   // Convertir el objeto FormData a un objeto plano
   const entries = Object.fromEntries(formData.entries());
+  console.log(entries.password, entries.email);
 
   // Realizar una solicitud POST a la API de inicio de sesión
   fetch("http://localhost:4321/auth/sign-in", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(entries),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: entries.email,
+      password: entries.password,
+    }),
   }).then((response) => {
+    console.log(response);
+
     if (response.ok) {
-      // ! REDIRIGIR AL USUARIO A LA PÁGINA PRINCIPAL
+      // window.location.href = "../pages/orders.html";
     } else {
-      // ! MOSTRAR UN MENSAJE DE ERROR AL USUARIO
+      console.log(response);
     }
   });
 });

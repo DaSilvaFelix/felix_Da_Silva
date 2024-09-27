@@ -21,8 +21,7 @@ const menues = menuList.map((menu) => {
   // Crear un elemento <a> para el enlace del menú
   const a = document.createElement("a");
   a.href = menu.link; // Establecer el enlace del menú
-  a.className =
-    "inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"; // Establecer las clases CSS para el estilo
+  a.className = "inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"; // Establecer las clases CSS para el estilo
   a.textContent = menu.name; // Establecer el texto del enlace con el nombre del menú
 
   // Anidar el enlace <a> dentro del elemento <li>
@@ -46,8 +45,7 @@ function createUserAvatar(username, avatarUrl = null) {
     avatarElement.className = "w-8 h-8 rounded-full";
   } else {
     avatarElement = document.createElement("div");
-    avatarElement.className =
-      "w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center text-white";
+    avatarElement.className = "w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center text-white";
     avatarElement.textContent = username.charAt(0).toUpperCase();
   }
 
@@ -66,8 +64,7 @@ function createUserAvatar(username, avatarUrl = null) {
 export function navbar(session = null) {
   // Crear el contenedor principal de la navbar
   const navbarDiv = document.createElement("div");
-  navbarDiv.className =
-    "bg-gradient-to-r from-secondary to-secondary/90 shadow-md bg-gray-900 text-white";
+  navbarDiv.className = "bg-gradient-to-r from-secondary to-secondary/90 shadow-md bg-gray-900 text-white";
 
   // Crear el contenedor interno
   const containerDiv = document.createElement("div");
@@ -85,8 +82,7 @@ export function navbar(session = null) {
   // Crear el enlace del logo
   const logoLink = document.createElement("a");
   logoLink.href = "#";
-  logoLink.className =
-    "font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive";
+  logoLink.className = "font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive";
 
   // Crear la imagen del logo
   const logoImg = document.createElement("img");
@@ -120,8 +116,7 @@ export function navbar(session = null) {
 
   // Crear el botón de "Order"
   const orderButton = document.createElement("button");
-  orderButton.className =
-    "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3";
+  orderButton.className = "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3";
   orderButton.textContent = "Orders";
 
   orderButton.addEventListener("click", () => {
@@ -129,16 +124,8 @@ export function navbar(session = null) {
   });
 
   // Crear el icono SVG para el botón de "Order"
-  const orderSvg = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "svg"
-  );
-  orderSvg.classList.add(
-    "text-xl",
-    "text-white",
-    "drop-shadow-sm",
-    "cursor-pointer"
-  );
+  const orderSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  orderSvg.classList.add("text-xl", "text-white", "drop-shadow-sm", "cursor-pointer");
   orderSvg.setAttribute("stroke", "currentColor");
   orderSvg.setAttribute("fill", "currentColor");
   orderSvg.setAttribute("stroke-width", "0");
@@ -148,10 +135,7 @@ export function navbar(session = null) {
   orderSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
   // Crear la ruta del icono SVG
-  const orderPath = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "path"
-  );
+  const orderPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
   orderPath.setAttribute(
     "d",
     "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
@@ -172,15 +156,11 @@ export function navbar(session = null) {
 
   // Si hay sesión, mostrar el avatar y el botón de "Logout"
   if (session) {
-    const avatar = createUserAvatar(
-      session.user.username,
-      session.user.avatarUrl
-    );
+    const avatar = createUserAvatar(session.user.username, session.user.avatarUrl);
     menuDiv.appendChild(avatar);
 
     const logoutButton = document.createElement("button");
-    logoutButton.className =
-      "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full";
+    logoutButton.className = "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full";
     logoutButton.textContent = "Logout";
 
     logoutButton.addEventListener("click", () => {
@@ -191,8 +171,7 @@ export function navbar(session = null) {
   } else {
     // Si no hay sesión, mostrar el botón de "Login"
     const loginButton = document.createElement("button");
-    loginButton.className =
-      "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full";
+    loginButton.className = "bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full";
     loginButton.textContent = "Login";
 
     loginButton.addEventListener("click", () => {
